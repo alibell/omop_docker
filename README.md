@@ -10,8 +10,8 @@ This repository provide DockerFile and docker compose for an OMOP + WebAPI + ATL
 
 ## To do
 
-- [ ] CDM DockerFile
-  - [ ] Configure the Posgresql database
-  - [ ] Integrate the ATHENA vocabularies in the database
+- [x] CDM DockerFile
+  - [x] Configure the Posgresql database
+  - [x] Integrate the ATHENA vocabularies in the database
   - [ ] Data generation (Synthea) according to the environment variable parameters (/!\ Synthea is slow /!\)
 - [ ] WebAPI and Atlas DockerFile
