@@ -1,12 +1,26 @@
-version: 3.9
+version: "3.9"
 services:
   cdm:
     build: ./CDM
     env_file: [env]
-    port:
+    ports:
       - 5432:5432
+    container_name: cdm
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U docker"]
-      interval: 5s
+      test: ["CMD-SHELL", "pg_isready -h 0.0.0.0"]
+      interval: 15s
       timeout: 5s
-      retry: 5
+      retries: 180
+  broadsea-webtools:
+    build: ./broadsea-webtools
+    container_name: broadsea-webtools
+    ports:
+      - 8080:8080
+    env_file: [env]
+    environment:
+      - security_enabled=false
+      - security_origin=*
+    depends_on:
+      cdm:
+        condition: service_healthy
+      
