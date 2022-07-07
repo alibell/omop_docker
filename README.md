@@ -2,7 +2,7 @@
 
 ## Aim of this repository
 
-This repository provide DockerFile and docker compose for an OMOP + WebAPI + ATLAS installation. Usefull for educational purpose.
+This repository provide DockerFile and docker compose for an OMOP + WebAPI + ATLAS installation. Useful for educational purpose.
 
 ## How to use
 
