@@ -12,6 +12,7 @@ echo "---------"
 supervisordPid=$!
 
 while true; do
+    supervisordPid=$(ps ax -o pid,cmd | grep "/usr/bin/supervisord" | head -1 | grep -o '[0-9]*' | head -1)
     cpuUsage=$(ps -p $supervisordPid -o pcpu | tail -1 | bc)
     cpuUsageCheck=$(echo "$cpuUsage > 0.5" | bc -l)
     
